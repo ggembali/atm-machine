@@ -12,7 +12,10 @@ Design an ATM machine
 - [Flowchart](uml/flow-diagram.md) diagram.   
 - [Entity](uml/entity-diagram.md) diagram. 
 
-### Source code/ implementation
+### Source code/ implementations
 
-
+Structure of the project is a standard maven. All dependencies are available in the public repositories. Some of the libraries used include:
+- injection: google Guice
+- logging: slf4j
+- testing: testNG, mockito
 
