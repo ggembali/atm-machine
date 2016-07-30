@@ -8,4 +8,23 @@ public class MoneyWallet {
     private Money money;
     private int amount;
 
+    public Money getMoney() {
+        return money;
+    }
+
+    public void setMoney(Money money) {
+        this.money = money;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public int getTotalValue() {
+        return money.getValue() * amount;
+    }
 }

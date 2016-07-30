@@ -1,7 +1,6 @@
 package com.github.dspirov.model.atm;
 
 import com.github.dspirov.service.atm.AtmLocator;
-import com.github.dspirov.service.atm.AtmService;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Guice;
@@ -18,9 +17,6 @@ import javax.inject.Inject;
 public class AtmTest {
 
     @Inject
-    private AtmService atmService;
-
-    @Inject
     private AtmLocator atmLocator;
 
     @BeforeMethod
@@ -33,12 +29,14 @@ public class AtmTest {
         String atmId = "atm-1";
         Atm atm = atmLocator.getAtm(atmId);
         Assert.assertNotNull(atm);
-        Assert.assertEquals(atm.getId(), atmId);
+        Assert.assertEquals(atm.getId(), atmId, "Requested atm atm-1 was not found");
     }
 
     @Test
-    public void testIsWithdrawPossible() throws Exception {
-
+    public void testIsWithdrawPossible_moreThenMaxAllowed() throws Exception {
+        String atmId = "atm-1";
+        Atm atm = atmLocator.getAtm(atmId);
+        Assert.assertTrue(!atm.isWithdrawPossible(Atm.MAX_ALLOWED_AMOUNT + 1), "Is possible to withdraw more then MAX_ALLOWED");
     }
 
 }

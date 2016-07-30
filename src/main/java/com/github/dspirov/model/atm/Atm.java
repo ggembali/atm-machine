@@ -5,6 +5,8 @@ package com.github.dspirov.model.atm;
  */
 public class Atm {
 
+    public static final int MAX_ALLOWED_AMOUNT = 10000;
+
     private String id;
     private MoneyBank moneyBank;
 
@@ -17,7 +19,10 @@ public class Atm {
     }
 
     public boolean isWithdrawPossible(int amount) {
-        return false;
+        if(amount > 10000) {
+            return false;
+        }
+        return true;
     }
 
     public void setId(String id) {
