@@ -5,7 +5,6 @@ import com.github.dspirov.service.atm.AtmModule;
 import com.github.dspirov.service.bank.BankAccountService;
 import com.github.dspirov.service.bank.BankAuthenticationService;
 import com.google.inject.AbstractModule;
-import com.sun.deploy.config.MacOSXPlatform;
 import org.mockito.Mockito;
 
 import java.util.HashMap;

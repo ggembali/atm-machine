@@ -5,15 +5,15 @@ package com.github.dspirov.model.atm;
  */
 public class MoneyWallet {
 
-    private Money money;
+    private final Money money;
     private int amount;
+
+    public MoneyWallet(Money money) {
+        this.money = money;
+    }
 
     public Money getMoney() {
         return money;
-    }
-
-    public void setMoney(Money money) {
-        this.money = money;
     }
 
     public int getAmount() {

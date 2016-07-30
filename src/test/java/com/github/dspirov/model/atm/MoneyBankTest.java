@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * Created by dspirov on 30/07/16.
  */
@@ -16,9 +14,7 @@ public class MoneyBankTest {
     @BeforeMethod
     public void setUp() throws Exception {
         moneyBank = new MoneyBank();
-        MoneyWallet mw1 = new MoneyWallet();
-        Money oneDollar = new OneDollar();
-        mw1.setMoney(oneDollar);
+        MoneyWallet mw1 = new MoneyWallet(new OneDollar());
         mw1.setAmount(45);
         moneyBank.addWallet(mw1);
     }
